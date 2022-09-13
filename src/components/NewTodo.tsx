@@ -1,10 +1,10 @@
 import styles from "./NewTodo.module.css";
 import { PlusCircle } from "phosphor-react";
-import { InvalidEvent } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent } from "react";
 
 interface NewTodoProps {
-  onSubmit: any;
-  onChange: any;
+  onSubmit: (event: FormEvent) => void;
+  onChange: (event: ChangeEvent) => void;
   value: string;
   disabled: boolean;
 }
@@ -14,8 +14,6 @@ export function NewTodo({ onSubmit, onChange, value, disabled }: NewTodoProps) {
   function handleNewCommentInvalid(event: InvalidEvent<HTMLInputElement>) {
     event.target.setCustomValidity('Esse campo é obrigatório');
   }
-
-  console.log(disabled);
 
   return (
     <form onSubmit={onSubmit} className={styles.newTodoForm}>
