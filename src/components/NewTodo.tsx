@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent, InvalidEvent } from "react";
 
 interface NewTodoProps {
   onSubmit: (event: FormEvent) => void;
-  onChange: (event: ChangeEvent) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   value: string;
   disabled: boolean;
 }

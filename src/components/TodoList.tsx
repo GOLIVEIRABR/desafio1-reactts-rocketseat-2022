@@ -4,19 +4,21 @@ import clipboard from '../assets/clipboard.svg';
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { NewTodo } from './NewTodo';
 
+import { v4 as uuidv4 } from 'uuid';
+
 const sampleTasks = [
   {
-    id: 1,
+    id: uuidv4(),
     content: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     completed: false
   },
   {
-    id: 2,
+    id: uuidv4(),
     content: "Lorem ipsum dolor sit amet, qui minim labore",
     completed: false
   },
   {
-    id: 3,
+    id: uuidv4(),
     content: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     completed: true
   }
@@ -30,7 +32,7 @@ export function TodoList() {
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
     const newTask = {
-      id: listOfTasks.length + 1,
+      id: uuidv4,
       content: newTaskText,
       completed: false
     }
@@ -43,7 +45,7 @@ export function TodoList() {
     setNewTaskText(event.target.value);
   }
 
-  function handleToggleCompleteTask(taskToComplete: number) {
+  function handleToggleCompleteTask(taskToComplete: string) {
     const taskWithOneCompleted = listOfTasks.map(task => {
       if (task.id === taskToComplete) {
         task.completed = !task.completed;
@@ -55,7 +57,7 @@ export function TodoList() {
     setListOfTasks([...taskWithOneCompleted]);
   }
 
-  function removeTask(taskToDelete: number) {
+  function removeTask(taskToDelete: string) {
     const taskWithoutDeletedOne = listOfTasks.filter(task => {
       return task.id !== taskToDelete;
     });
