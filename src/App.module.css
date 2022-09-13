@@ -1,0 +1,17 @@
+.content{
+  max-width: 46rem;
+}
+
+.wrapper{
+  max-width: 46rem;
+  margin: -2rem auto;
+}
+
+@media(max-width: 768px){
+  html {
+    font-size: 87.5%;
+  } 
+  .wrapper{
+    padding: 0 1rem;
+  }
+}

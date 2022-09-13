@@ -1,0 +1,85 @@
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.wrapper+.wrapper{
+  margin-top: 0.75rem;
+}
+
+.statusButton{
+  min-height: 16px;
+  min-width: 16px;
+  border: 1px solid var(--blue);
+  border-radius: 100%;
+  align-self:  flex-start;
+  margin-right: 0.75rem;
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+}
+
+.statusButton:hover{
+  background-color: var(--blueDark);
+  opacity: 0.5;
+}
+
+.statusButtonCompleted{
+  display: flex;
+
+  min-height: 16px;
+  min-width: 16px;
+  border: 1px solid var(--purpleDark);
+  border-radius: 100%;
+  align-self:  flex-start;
+  margin-right: 0.75rem;
+  background-color: var(--purpleDark);
+  cursor: pointer;
+}
+
+.statusButtonCompleted span{
+  margin: -0.3125rem auto;
+}
+
+.statusButtonCompleted span:before{
+  content: "\2714";
+  font-size: 0.6rem;
+  color: var(--gray-100);
+}
+
+article div p{
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--gray-100);
+  width: 100%;
+}
+
+.completedText{
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.trash{
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+
+  display: flex;
+  border-radius: 2px;
+  margin-left: 1.0rem;
+  align-self: flex-start;
+}
+
+.trash:hover{
+  color: var(--danger);
+}
+
+
+
