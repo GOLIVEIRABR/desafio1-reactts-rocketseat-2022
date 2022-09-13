@@ -32,7 +32,7 @@ export function TodoList() {
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
     const newTask = {
-      id: uuidv4,
+      id: uuidv4(),
       content: newTaskText,
       completed: false
     }
